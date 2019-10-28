@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_184822) do
+ActiveRecord::Schema.define(version: 2019_10_28_200316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,4 +37,19 @@ ActiveRecord::Schema.define(version: 2019_10_28_184822) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "sites", force: :cascade do |t|
+    t.time "opening_time", null: false
+    t.text "descritpion", null: false
+    t.string "phone_number"
+    t.string "website"
+    t.integer "category", null: false
+    t.string "photo", null: false
+    t.bigint "sector_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["phone_number"], name: "index_sites_on_phone_number", unique: true
+    t.index ["sector_id"], name: "index_sites_on_sector_id"
+  end
+
+  add_foreign_key "sites", "sectors"
 end
