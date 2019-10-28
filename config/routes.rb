@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sites/index'
+  get 'sites/create'
+  get 'sites/show'
+  get 'sites/edit'
+  get 'sites/update'
+  get 'sites/delete'
   devise_for :admins
 
   devise_for :admins, skip: %i[sessions confirmations passwords]
