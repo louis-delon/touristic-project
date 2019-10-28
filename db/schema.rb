@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2019_10_28_184822) do
   end
 
   create_table "sectors", force: :cascade do |t|
-    t.string "name"
-    t.string "illustration"
-    t.string "city"
-    t.text "description"
-    t.integer "sort"
+    t.string "name", null: false
+    t.string "illustration", null: false
+    t.string "city", null: false
+    t.text "description", null: false
+    t.integer "sort", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
