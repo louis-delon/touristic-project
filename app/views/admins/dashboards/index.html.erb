@@ -1,7 +1,10 @@
 <h1>Bienvenue dans vos espace</h1>
 
-
-<%= simple_form_for(@user, html: { class: 'form-inline' }) do |form| %>
-
+<h2>Ajouter un quartier</h2>
+<%= simple_form_for [:admins, @sector], html: { class: 'form-inline' }, remote: true do |f| %>
+  <%= f.input :name, label: 'Nom du quartier', error: 'Champ Obligatoire' %>
+  <%= f.input :description, placeholder: '400 caractère max', error: 'Champ obligatoire' %>
+  <%= f.input :city, label: 'Ville', error: 'Champ obligatoire' %>
+  <%= f.input :illustration, label: 'Illustration', hint: 'insérer une belle image du quartier', error: 'Champ obligatoire' %>
 <% end %>
 
