@@ -1,0 +1,9 @@
+fr:
+  activerecord:
+    attributes:
+      sector:
+        name: Nom du quartier
+        Description: Description
+        illustration: Illustration
+        city: ville
+        success: Le quartier a été ajouté avec succès

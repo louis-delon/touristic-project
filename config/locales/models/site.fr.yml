@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    attributes:
+      site:
+        opening_time: Horraire d'ouverture
+        Description: Description
+        phone_number: Numéro de téléphone
+        category: catégorie
+        picture: photo
+        category_name:
+          restaurant: restaurant
+          bar: bar
+          shop: boutique
+          hiking: ballade
