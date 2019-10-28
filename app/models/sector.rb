@@ -1,10 +1,9 @@
 class Sector < ApplicationRecord
 
-# Associations =================================================================
+  # Associations ===============================================================
+  has_many :sites, inverse_of: :sector
 
-
-# Validations ==================================================================
-
-validates :name, :illustration, :description, :city, :sort, presence: true
+  # Validations ================================================================
+  validates :name, :illustration, :description, :city, :sort, presence: true
 
 end

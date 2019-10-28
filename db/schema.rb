@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_200316) do
     t.string "phone_number"
     t.string "website"
     t.integer "category", null: false
-    t.string "photo", null: false
+    t.string "picture", null: false
     t.bigint "sector_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

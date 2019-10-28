@@ -6,7 +6,7 @@ class CreateSites < ActiveRecord::Migration[6.0]
       t.string :phone_number, index: { unique: true }
       t.string :website
       t.integer :category, null: false
-      t.string :photo, null: false
+      t.string :picture, null: false
       t.references :sector, index: true, null: false, foreign_key: true
 
       t.timestamps
