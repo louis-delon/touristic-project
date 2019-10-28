@@ -6,7 +6,7 @@ class Site < ApplicationRecord
 
   # Associations ===============================================================
 
-  belongs_to :sector, inverse_of: :sites
+  belongs_to :sector, inverse_of: :sites, counter_cache: true
 
   # Validations ================================================================
 
