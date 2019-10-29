@@ -1,3 +1,22 @@
 fr:
+  activerecord:
+    attributes:
+      sector:
+        name: Nom du quartier
+        Description: Description
+        illustration: Illustration
+        city: ville
+        success: Le quartier a été ajouté avec succès
+      site:
+        opening_time: Horraire d'ouverture
+        Description: Description
+        phone_number: Numéro de téléphone
+        category: catégorie
+        picture: photo
+        category_name:
+          restaurant: restaurant
+          bar: bar
+          shop: boutique
+          hiking: ballade
 
 

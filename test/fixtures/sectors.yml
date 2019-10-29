@@ -5,11 +5,9 @@ one:
   illustration: MyString
   city: MyString
   description: MyText
-  sort: 1
 
 two:
   name: MyString
   illustration: MyString
   city: MyString
   description: MyText
-  sort: 1

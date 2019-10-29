@@ -19,9 +19,24 @@
   </div>
 <% end %>
 
-<div>
-  <% @sectors.each do |sector| %>
-    <%= sector.name %>
-  <% end %>
-</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Position</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Description</th>
+      <th scope="col">Ville</th>
+    </tr>
+  </thead>
 
+  <tbody id="sectors">
+    <% @sectors.each do |sector| %>
+        <tr data-link="#">
+          <th scope="row"><%= sector.position %></th>
+          <td><%= sector.name %></td>
+          <td><%= sector.description %></td>
+          <td><%= sector.position %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

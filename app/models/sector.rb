@@ -11,7 +11,7 @@ class Sector < ApplicationRecord
 
   # Validations ================================================================
 
-  validates :name, :illustration, :description, :city, :sort, presence: true
+  validates :name, :illustration, :description, :city, presence: true
   validates :illustration, attached: true, content_type: [:png, :jpg, :jpeg]
 
 end

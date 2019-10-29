@@ -22,6 +22,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
 gem 'active_storage_validations', '~> 0.8.3'
+gem 'acts_as_list', '~> 1.0'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
