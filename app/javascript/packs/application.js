@@ -24,8 +24,16 @@ require("packs/sectors")
 
 import 'bootstrap'
 import '../stylesheets/application'
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+const application = Application.start()
+const context = require.context("controllers", true, /.js$/)
+application.load(definitionsFromContext(context))
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+
+import "controllers"
