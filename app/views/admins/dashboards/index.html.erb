@@ -2,12 +2,21 @@
 
 <h2>Ajouter un quartier</h2>
 
-<%= simple_form_for [:admins, @sector], remote: true do |f| %>
-  <%= f.input :name, label: 'Nom du quartier', error: 'Champ Obligatoire' %>
-  <%= f.input :description, placeholder: '400 caractère max', error: 'Champ obligatoire' %>
-  <%= f.input :city, label: 'Ville', error: 'Champ obligatoire' %>
-  <%= f.input :illustration, label: 'Illustration', hint: 'insérer une belle image du quartier', error: 'Champ obligatoire' %>
-  <%= f.button :submit %>
+<%= form_with model: [:admins, @sector] do |f| %>
+  <div >
+    <div >
+      <%= f.text_field :name, label: 'Nom du quartier', error: 'Champ Obligatoire' %>
+    <div >
+      <%= f.rich_text_area :description, placeholder: '400 caractère max', error: 'Champ obligatoire' %>
+    </div>
+    <div>
+      <%= f.text_field :city, label: 'Ville', error: 'Champ obligatoire' %>
+    </div>
+    <div >
+      <%= f.file_field :illustration, label: 'Illustration', hint: 'insérer une belle image du quartier', error: 'Champ obligatoire' %>
+    </div>
+      <%= f.button :submit %>
+  </div>
 <% end %>
 
 <div>
