@@ -1,16 +1,27 @@
 <%= form_with model: [:admins, @sector] do |f| %>
   <div >
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     <div >
-      <%= f.text_field :name, label: 'Nom du quartier', error: 'Champ Obligatoire' %>
-    <div >
-      <%= f.rich_text_area :description, placeholder: '400 caractères max', error: 'Champ obligatoire' %>
-    </div>
+
     <div>
-      <%= f.text_field :city, label: 'Ville', error: 'Champ obligatoire' %>
+      <%= f.label :description %>
+      <%= f.rich_text_area :description, placeholder: '400 caractères max' %>
     </div>
-    <div >
-      <%= f.file_field :illustration, label: 'Illustration', hint: 'insérer une belle image du quartier', error: 'Champ obligatoire' %>
+
+    <div class="form-group">
+      <%= f.label :city%>
+      <%= f.text_field :city, label: 'Ville' %>
     </div>
-      <%= f.button :submit %>
+
+    <div class="form-group">
+      <%= f.label :illustration%>
+      <%= f.file_field :illustration%>
+    </div>
+
+     <div><%= f.button :submit %></div>
+
   </div>
 <% end %>
