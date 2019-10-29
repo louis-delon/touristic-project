@@ -7,7 +7,7 @@
     <div >
       <%= f.text_field :name, label: 'Nom du quartier', error: 'Champ Obligatoire' %>
     <div >
-      <%= f.rich_text_area :description, placeholder: '400 caractère max', error: 'Champ obligatoire' %>
+      <%= f.rich_text_area :description, placeholder: '400 caractères max', error: 'Champ obligatoire' %>
     </div>
     <div>
       <%= f.text_field :city, label: 'Ville', error: 'Champ obligatoire' %>
@@ -19,7 +19,7 @@
   </div>
 <% end %>
 
-<table class="table table-hover">
+<table id="table" class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Position</th>
@@ -32,10 +32,10 @@
   <tbody id="sectors">
     <% @sectors.each do |sector| %>
         <tr data-link="#">
-          <th scope="row"><%= sector.position %></th>
+          <td><%= sector.position %></td>
           <td><%= sector.name %></td>
           <td><%= sector.description %></td>
-          <td><%= sector.position %></td>
+          <td><%= sector.city %></td>
         </tr>
     <% end %>
   </tbody>
