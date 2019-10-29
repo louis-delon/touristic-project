@@ -5,6 +5,9 @@ module Admins
     def create
       @sector = Sector.new(params_sector)
       @sector.save!
+      respond_to do |format|
+        format.js
+      end
         # redirect_to admins_root_path, notice: t('activerecord.attributes.sector.success')
       # else
       #   render "/admins"

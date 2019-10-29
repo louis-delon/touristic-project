@@ -9,17 +9,15 @@
     <tr>
       <th scope="col">Position</th>
       <th scope="col">Nom</th>
-      <th scope="col">Description</th>
       <th scope="col">Ville</th>
     </tr>
   </thead>
 
   <tbody id="sectors">
     <% @sectors.each do |sector| %>
-        <tr data-link="#">
+        <tr>
           <td><%= sector.position %></td>
           <td><%= sector.name %></td>
-          <td><%= sector.description %></td>
           <td><%= sector.city %></td>
         </tr>
     <% end %>
