@@ -4,15 +4,16 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("jquery")
-require("jquery-ui/widget")
-require("jquery-ui/sortable")
-require("packs/sectors")
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("trix")
 require("@rails/actiontext")
+require("jquery")
+require("jquery-ui")
+require("jquery-ui/widget")
+require("jquery-ui/sortable")
+require("packs/sectors")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
