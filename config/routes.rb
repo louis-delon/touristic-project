@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, skip: %i[sessions confirmations passwords]
+  devise_for :admins
 
   authenticate :admin do
     namespace :admins do

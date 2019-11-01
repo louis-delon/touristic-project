@@ -3,15 +3,19 @@ module Admins
   class SectorsController < ApplicationController
 
     def create
+      @sectors = Sector.all
       @sector = Sector.new(params_sector)
-      @sector.save!
-      respond_to do |format|
-        format.js
+      if @sector.save
+        respond_to do |format|
+          format.html { redirect_to admins_root_path, notice: t('activerecord.attributes.sector.success') }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { render "/admins" }
+          format.js
+        end
       end
-        # redirect_to admins_root_path, notice: t('activerecord.attributes.sector.success')
-      # else
-      #   render "/admins"
-      # end
     end
 
     def edit

@@ -1,8 +1,9 @@
 <h1>Bienvenue dans vos espace</h1>
 
 <h2>Ajouter un quartier</h2>
-
-<%= render 'form' %>
+<div id="sector">
+  <%= render 'form' %>
+</div>
 
 <table id="sector_list" class="table table-hover">
   <thead>
@@ -15,11 +16,7 @@
 
   <tbody id="sectors">
     <% @sectors.each do |sector| %>
-        <tr>
-          <td><%= sector.position %></td>
-          <td><%= sector.name %></td>
-          <td><%= sector.city %></td>
-        </tr>
+        <%= render "sector", sector: sector %>
     <% end %>
   </tbody>
 </table>

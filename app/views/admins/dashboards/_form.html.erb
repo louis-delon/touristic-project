@@ -1,27 +1,31 @@
-<%= form_with model: [:admins, @sector] do |f| %>
-  <div data-controller="sectors">
+
+  <%= form_with model: [:admins, @sector], data: { controller: "sectors" }  do |f| %>
+
+    <div id="error_messages">
+      <%= render "admins/shared/form_errors_messages" %>
+    </div>
 
     <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, data: { target: "sectors.name" } %>
+      <%= f.text_field :name, data: { target: "sectors.name" },  class: "form-control",  id: "name" %>
     <div >
 
     <div class="form-group">
       <%= f.label :description %>
-      <%= f.rich_text_area :description, placeholder: '400 caractères max' %>
+      <%= f.rich_text_area :description, placeholder: '400 caractères max', data: { target: "sectors.description" }, id: "description", class: "form-control" %>
     </div>
 
     <div  class="form-group">
       <%= f.label :city%>
-      <%= f.text_field :city, label: 'Ville', data: { target: "sectors.city" } %>
+      <%= f.text_field :city, label: 'Ville', data: { target: "sectors.city" }, class: "form-control", id: "city" %>
     </div>
 
     <div class="form-group">
       <%= f.label :illustration%>
-      <%= f.file_field :illustration%>
+      <%= f.file_field :illustration, id: "illustration", data: { target: "sectors.illustration" }%>
     </div>
 
-     <div data-action="click->sectors#insert"><%= f.button :submit %></div>
+     <%= f.button :submit, class: "button btn btn-primary", data: { action: "click->sectors#onSubmitSectorForm"} %>
+  <% end %>
 
-  </div>
-<% end %>
+<br><br>
