@@ -1,3 +1,12 @@
 #sector_list td {
   cursor: pointer;
 }
+
+.main {
+  display: "flex";
+  align-items: center;
+}
+
+#sector {
+  flex-grow: 1;
+}

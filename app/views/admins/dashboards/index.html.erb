@@ -1,22 +1,32 @@
-<h1>Bienvenue dans vos espace</h1>
-
-<h2>Ajouter un quartier</h2>
-<div id="sector">
-  <%= render 'form' %>
+<div class="row">
+  <h1>Bienvenue dans vos espace</h1>
 </div>
 
-<table id="sector_list" class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Position</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Ville</th>
-    </tr>
-  </thead>
+<div class="row">
+  <h2>Ajouter un quartier</h2>
+</div>
 
-  <tbody id="sectors">
-    <% @sectors.each do |sector| %>
-        <%= render "sector", sector: sector %>
-    <% end %>
-  </tbody>
-</table>
+<div class="row main">
+  <div  id="sector">
+    <%= render 'form' %>
+  </div>
+
+  <div>
+    <table id="sector_list" class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Position</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Ville</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody id="sectors">
+        <% @sectors.each do |sector| %>
+            <%= render "sector", sector: sector %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

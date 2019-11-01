@@ -27,7 +27,19 @@ module Admins
     def show
     end
 
-    def delete
+    def destroy
+      @sector = Sector.find(params[:id])
+      if @sector.destroy
+        respond_to do |format|
+          format.html { redirect_to admins_root_path, notice: "Quartier supprimé avec succès" }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to admins_root_path, notice: "Echec de suppression, veuillez rééssayer" }
+          format.js
+        end
+      end
     end
 
     private

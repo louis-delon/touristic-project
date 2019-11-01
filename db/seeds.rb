@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if Rails.env.development?
+
+  cities = %i(Rome Berlin Paris)
+  puts "create sectors"
+  10.times do
+    s = Sector.new(
+      name: Faker::Lorem.word,
+      position: Sector.all.size,
+      city: cities.sample
+    )
+    s.save(validate: false)
+    s.illustration.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'paris.jpeg')), filename: 'paris.jpeg')
+  end
+  puts "successfull"
+end
