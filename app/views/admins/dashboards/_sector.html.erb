@@ -1,8 +1,8 @@
-<tr class="sector_detail">
+<tr data-sector-id="<%= sector.id %>">
   <td><%= sector.position %></td>
   <td><%= sector.name %></td>
   <td><%= sector.city %></td>
   <td>
-    <%= link_to "Supprimer", admins_sector_path(sector), method: :delete, remote: true %>
+    <%= link_to "Supprimer", admins_sector_path(sector), method: :delete, class: "button_delete", remote: true %>
   </td>
 </tr>

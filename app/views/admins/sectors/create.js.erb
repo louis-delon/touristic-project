@@ -1,10 +1,13 @@
 
 var error_messages = `<%= j render "admins/shared/form_errors_messages" %>`;
 var new_sector =
-  `<tr>
+  `<tr data-sector-id="<%= @sector.id %>">
     <td> <%= @sector.position %></td>
     <td> <%= @sector.name %> </td>
     <td> <%= @sector.city %> </td>
+    <td>
+      <%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, class: "button_delete", remote: true %>
+    </td>
   </tr>`;
 
 function refreshErrorMessages() {

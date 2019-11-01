@@ -1,12 +1,1 @@
-// selectionner l'élément cliqué avec un addeventlistener
-// faire un innerHTML= ""
-console.log("destroy")
-
-sectors = document.querySelectorAll('.sector_detail')
-console.log(Array.from(sectors))
-
-// sectors.foreach((sector) => {
-//   addeventlistener("click", () => {
-//     event.currentTarget.innerHTML = ""
-//   })
-// })
+document.querySelector("[data-sector-id='<%= @sector.id%>']").remove()
