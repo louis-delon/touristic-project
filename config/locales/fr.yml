@@ -6,7 +6,10 @@ fr:
         Description: Description
         illustration: Illustration
         city: ville
-        success: Le quartier a été ajouté avec succès
+        create:
+          success: Le quartier a été ajouté avec succès
+        update:
+          success: Le quartier a été mis à jour
       site:
         opening_time: Horraire d'ouverture
         Description: Description

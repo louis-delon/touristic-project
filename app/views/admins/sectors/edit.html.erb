@@ -1,4 +1,5 @@
-<h1>Sectors#edit</h1>
-<p>Find me in app/views/sectors/edit.html.erb</p>
-
+<h1>Mettez à jour le quartier</h1>
+<%= form_with model: [:admins, @sector], data: { controller: "sectors" }, local: true  do |f| %>
+  <%= render 'form_attributes', f:f %>
+<% end %>
 

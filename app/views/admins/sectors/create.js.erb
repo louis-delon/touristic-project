@@ -1,6 +1,4 @@
-
 var error_messages = `<%= j render "admins/shared/form_errors_messages" %>`;
-
 
 function refreshErrorMessages() {
   var element = document.getElementById('error_messages')
@@ -22,7 +20,9 @@ function addSector() {
       <td><%= @sector.city %></td>
       <% if @sector.persisted? %>
         <td>
-          <%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, class: "button_delete", remote: true %>
+          <%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, remote: true %>
+          <%= link_to "Voir", admins_sector_path(@sector) %>
+          <%= link_to "Editer", edit_admins_sector_path(@sector) %>
         </td>
       <% end %>
     </tr>`;

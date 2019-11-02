@@ -1,5 +1,4 @@
 
-  <%= form_with model: [:admins, @sector], data: { controller: "sectors" }  do |f| %>
 
     <div id="error_messages">
       <%= render "admins/shared/form_errors_messages" %>
@@ -26,6 +25,3 @@
     </div>
 
      <%= f.button :submit, class: "button btn btn-primary", data: { action: "click->sectors#onSubmitSectorForm"} %>
-  <% end %>
-
-<br><br>
