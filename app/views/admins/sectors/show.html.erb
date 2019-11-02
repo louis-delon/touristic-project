@@ -5,16 +5,16 @@
 
 <%= render "admins/sites/form" %>
 
-<ul class="row sites">
+<ul id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
   <% @sites.each do |site| %>
-    <li>
-      <div id="title" ><%= site.title %></div>
-      <div id="opening_time" ><%= site.opening_time %></div>
-      <div id="description" ><%= site.description %></div>
-      <div id="phone_number" ><%= site.phone_number %></div>
-      <div id="website" ><%= site.website %></div>
-      <div id="category" ><%= site.category %></div>
-      <div id="image" ><%= image_tag(site.picture, class: "image") %></div>
+    <li class="site-group-item" data-site-id="<%= site.id %>" id="<%= dom_id(site)%>">
+      <div><%= site.title %></div>
+      <div><%= site.opening_time %></div>
+      <div><%= site.description %></div>
+      <div><%= site.phone_number %></div>
+      <div><%= site.website %></div>
+      <div><%= site.category %></div>
+      <div><%= image_tag(site.picture, class: "image") %></div>
     </li>
   <% end %>
 </ul>

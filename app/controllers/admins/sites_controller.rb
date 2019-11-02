@@ -19,6 +19,14 @@ module Admins
       end
     end
 
+    def sort
+      params[:site].each_with_index do |id, index|
+        Site.where(id: id).update_all(position: index + 1)
+      end
+
+      head :ok
+    end
+
     def show
     end
 

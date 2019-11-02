@@ -9,7 +9,11 @@ Rails.application.routes.draw do
         collection do
           patch :sort
         end
-        resources :sites, only: %i(index create show edit update destroy)
+        resources :sites, only: %i(index create show edit update destroy) do
+          collection do
+            patch :sort
+          end
+        end
       end
       resources :sites, only: %i(index create show edit update destroy)
     end
