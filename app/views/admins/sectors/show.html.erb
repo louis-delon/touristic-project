@@ -3,6 +3,8 @@
 <h2><%= @sector.city %></h2>
 <p><%= image_tag(@sector.illustration, class: "sector_image") %></p>
 
+<%= render "admins/sites/form" %>
+
 <ul>
   <% @sites.each do |site| %>
     <li><%= site.title %></li>

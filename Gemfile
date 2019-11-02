@@ -24,6 +24,7 @@ gem 'devise-i18n'
 gem 'active_storage_validations', '~> 0.8.3'
 gem 'acts_as_list', '~> 1.0'
 gem 'ransack', '~> 2.3', github: 'activerecord-hackery/ransack'
+gem 'geocoder', '~> 1.5', '>= 1.5.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
