@@ -1,19 +1,21 @@
 <h1>Quartier <%= @sector.name %></h1>
 <p></p>
 <h2><%= @sector.city %></h2>
-<p><%= image_tag(@sector.illustration, class: "sector_image") %></p>
+<p><%= image_tag(@sector.illustration, class: "image") %></p>
 
 <%= render "admins/sites/form" %>
 
-<ul>
+<ul class="row sites">
   <% @sites.each do |site| %>
-    <li><%= site.title %></li>
-    <li><%= site.opening_time %></li>
-    <li><%= site.descritpion %></li>
-    <li><%= site.phone_number %></li>
-    <li><%= site.website %></li>
-    <li><%= site.category %></li>
-    <li><%= site.picture %></li>
+    <li>
+      <div id="title" ><%= site.title %></div>
+      <div id="opening_time" ><%= site.opening_time %></div>
+      <div id="description" ><%= site.description %></div>
+      <div id="phone_number" ><%= site.phone_number %></div>
+      <div id="website" ><%= site.website %></div>
+      <div id="category" ><%= site.category %></div>
+      <div id="image" ><%= image_tag(site.picture, class: "image") %></div>
+    </li>
   <% end %>
 </ul>
 

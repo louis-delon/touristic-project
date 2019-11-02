@@ -7,11 +7,15 @@ module Admins
     end
 
     def create
+      @sector = Sector.find(params[:sector_id])
       @site = Site.new(params_site)
       if @site.save
-        redirect_to admins_sector(@sector), notice: "Nouvelle adresse crée avec succès"
+        redirect_to admins_sector_url(@sector), notice: "Nouvelle adresse crée avec succès"
       else
-        render :new
+        @sites = Site.all
+        @site = Site.new
+        @site.build_address
+        render "admins/sectors/show", status: :unprocessable_entity
       end
     end
 

@@ -1,4 +1,4 @@
-var error_messages = `<%= j render "admins/shared/form_errors_messages" %>`;
+var error_messages = `<%= j render "admins/shared/form_errors_messages", errors: @sector.errors %>`;
 
 function refreshErrorMessages() {
   var element = document.getElementById('error_messages')

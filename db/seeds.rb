@@ -16,10 +16,12 @@ if Rails.env.development?
   10.times do
     s = Sector.new(
       name: Faker::Lorem.word,
-      city: cities.sample
+      city: cities.sample,
+      description: Faker::Lorem.sentence
     )
-    s.save(validate: false)
+    s.save!(validate: false)
     s.illustration.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'paris.jpeg')), filename: 'paris.jpeg')
+    s.save!
   end
   puts "successfull creating sectors"
 
@@ -36,7 +38,7 @@ if Rails.env.development?
       category: rand(1..3),
       active: Faker::Boolean.boolean(true_ratio: 0.8)
     )
-    s.save(validate: false)
+    s.save!(validate: false)
     s.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'paris.jpeg')), filename: 'paris.jpeg')
   end
 end

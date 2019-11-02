@@ -48,6 +48,7 @@ module Admins
     def show
       @sites = Site.all
       @site = Site.new
+      @site.build_address
     end
 
     def destroy
