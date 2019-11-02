@@ -1,12 +1,6 @@
 
 var error_messages = `<%= j render "admins/shared/form_errors_messages" %>`;
-var new_sector =
-  `<tr data-sector-id="<%= @sector.id %>">
-    <td><%= @sector.position %></td>
-    <td><%= @sector.name %></td>
-    <td><%= @sector.city %></td>
-    <td><%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, class: "button_delete", id: dom_id(@sector), remote: true %></td>
-  </tr>`;
+
 
 function refreshErrorMessages() {
   var element = document.getElementById('error_messages')
@@ -21,6 +15,17 @@ function addErrorMessages(html) {
 }
 
 function addSector() {
+  var new_sector =
+    `<tr data-sector-id="<%= @sector.id %>" id="<%= dom_id(@sector)%>">
+      <td><%= @sector.position %></td>
+      <td><%= @sector.name %></td>
+      <td><%= @sector.city %></td>
+      <% if @sector.persisted? %>
+        <td>
+          <%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, class: "button_delete", remote: true %>
+        </td>
+      <% end %>
+    </tr>`;
   document.getElementById('sectors').insertAdjacentHTML('beforeend', new_sector)
   document.querySelector(".button").blur();
 }

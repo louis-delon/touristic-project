@@ -3,6 +3,7 @@ class Sector < ApplicationRecord
   # Config =====================================================================
 
   has_rich_text :description
+  acts_as_list
 
   # Associations ===============================================================
 

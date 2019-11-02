@@ -3,8 +3,9 @@ module Admins
   class SectorsController < ApplicationController
 
     def index
-      @sectors = Sector.order(:position)
       @sector = Sector.new
+      @q = Sector.ransack(params[:q])
+      @sectors = @q.result(distinct: true).order(:position)
     end
 
     def sort
@@ -16,7 +17,8 @@ module Admins
     end
 
     def create
-      @sectors = Sector.order(:position)
+      @q = Sector.ransack(params[:q])
+      @sectors = @q.result(distinct: true).order(:position)
       @sector = Sector.new(params_sector)
       if @sector.save
         respond_to do |format|
