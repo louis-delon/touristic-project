@@ -30,7 +30,7 @@
 
   <div class="form-group">
     <%= f.label :category %>
-    <%= f.select :category, f.object.class.categories.collect { |k, _| [t("activerecord.attributes.site.category_name/#{k}"), k] }, class: "form-control" %>
+    <%= f.select :category, f.object.class.categories.collect { |k, _| [t("activerecord.attributes.site.category_name.#{k}"), k] }, class: "form-control" %>
   </div>
 
   <%= f.fields_for :address do |address_field| %>

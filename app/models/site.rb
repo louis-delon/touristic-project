@@ -6,10 +6,13 @@ class Site < ApplicationRecord
 
   # Associations ===============================================================
 
+  has_rich_text :description
+
   has_and_belongs_to_many :sectors, inverse_of: :sites, counter_cache: true
   has_one :address, dependent: :destroy
-  has_one_attached :picture
   accepts_nested_attributes_for :address, allow_destroy: true, reject_if: :all_blank
+
+  has_one_attached :picture
 
   # Validations ================================================================
 

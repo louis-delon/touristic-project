@@ -12,7 +12,7 @@ fr:
           success: Le quartier a été mis à jour
       site:
         opening_time: Horraire d'ouverture
-        Description: Description
+        description: Description
         phone_number: Numéro de téléphone
         category: catégorie
         picture: photo

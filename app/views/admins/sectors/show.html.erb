@@ -1,7 +1,10 @@
 <h1>Quartier <%= @sector.name %></h1>
 <p></p>
 <h2><%= @sector.city %></h2>
+<p><%= @sector.description %></p>
 <p><%= image_tag(@sector.illustration, class: "image") %></p>
+
+<h2>Ajouter une Adresse au Quartier</h2>
 
 <%= render "admins/sites/form" %>
 
@@ -15,6 +18,9 @@
       <div><%= site.website %></div>
       <div><%= site.category %></div>
       <div><%= image_tag(site.picture, class: "image") %></div>
+      <div><%= link_to "Voir", admins_sector_site_path(@sector, site) %> </div>
+      <div><%= link_to "Editer", edit_admins_sector_site_path(@sector, site) %> </div>
+      <div><%= link_to "Supprimer", admins_sector_site_path(@sector, site), method: :delete %> </div>
     </li>
   <% end %>
 </ul>
