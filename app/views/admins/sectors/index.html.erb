@@ -22,7 +22,7 @@
         </tr>
       </thead>
 
-      <tbody id="sectors">
+      <tbody id="sectors" data-url="<%= sort_admins_sectors_path %>" >
         <% @sectors.each do |sector| %>
             <%= render "sector", sector: sector %>
         <% end %>

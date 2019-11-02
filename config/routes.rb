@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   authenticate :admin do
     namespace :admins do
-      root to: "dashboards#index"
-      resources :sectors, only: %i(create show edit update destroy)
+      root to: "sectors#index"
+      resources :sectors, only: %i(index create show edit update destroy) do
+        collection do
+          patch :sort
+        end
+      end
       resources :sites, only: %i(create show edit update destroy)
     end
   end

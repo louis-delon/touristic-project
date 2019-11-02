@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env.development?
-
+  Sector.destroy_all
   cities = %i(Rome Berlin Paris)
   puts "create sectors"
   10.times do

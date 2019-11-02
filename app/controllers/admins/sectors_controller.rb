@@ -2,8 +2,21 @@ module Admins
 
   class SectorsController < ApplicationController
 
+    def index
+      @sectors = Sector.order(:position)
+      @sector = Sector.new
+    end
+
+    def sort
+      params[:sector].each_with_index do |id, index|
+        Sector.where(id: id).update_all(position: index + 1)
+      end
+
+      head :ok
+    end
+
     def create
-      @sectors = Sector.all
+      @sectors = Sector.order(:position)
       @sector = Sector.new(params_sector)
       if @sector.save
         respond_to do |format|
@@ -49,7 +62,8 @@ module Admins
         :name,
         :illustration,
         :description,
-        :city
+        :city,
+        :position
       )
     end
 

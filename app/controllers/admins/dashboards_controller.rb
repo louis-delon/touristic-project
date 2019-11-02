@@ -2,7 +2,7 @@ module Admins
   class DashboardsController < ApplicationController
 
     def index
-      @sectors = Sector.all
+      @sectors = Sector.order(:position)
       @sector = Sector.new
     end
 
