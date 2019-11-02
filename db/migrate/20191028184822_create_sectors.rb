@@ -3,7 +3,7 @@ class CreateSectors < ActiveRecord::Migration[6.0]
     create_table :sectors do |t|
       t.string :name, null: false
       t.string :city, null: false
-      t.integer :position
+      t.integer :position, null: false
 
       t.timestamps
     end

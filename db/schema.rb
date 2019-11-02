@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
   create_table "sectors", force: :cascade do |t|
     t.string "name", null: false
     t.string "city", null: false
-    t.integer "position"
+    t.integer "position", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -88,11 +88,13 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
   create_table "sites", force: :cascade do |t|
     t.text "title", null: false
     t.time "opening_time", null: false
-    t.text "descritpion", null: false
+    t.text "description", null: false
     t.string "phone_number"
     t.string "website"
     t.integer "category", null: false
-    t.string "picture", null: false
+    t.string "picture"
+    t.integer "position", null: false
+    t.boolean "active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["phone_number"], name: "index_sites_on_phone_number", unique: true

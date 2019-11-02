@@ -10,7 +10,7 @@ Rails.application.routes.draw do
           patch :sort
         end
       end
-      resources :sites, only: %i(create show edit update destroy)
+      resources :sites, only: %i(index create show edit update destroy)
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
