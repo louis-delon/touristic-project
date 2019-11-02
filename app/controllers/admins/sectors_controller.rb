@@ -17,8 +17,6 @@ module Admins
     end
 
     def create
-      @q = Sector.ransack(params[:q])
-      @sectors = @q.result(distinct: true).order(:position)
       @sector = Sector.new(params_sector)
       if @sector.save
         respond_to do |format|
