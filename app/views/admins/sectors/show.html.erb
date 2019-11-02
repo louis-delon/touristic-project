@@ -1,2 +1,24 @@
-<h1>Sectors#show</h1>
-<p>Find me in app/views/sectors/show.html.erb</p>
+<h1>Quartier <%= @sector.name %></h1>
+<p></p>
+<h2><%= @sector.city %></h2>
+<p><%= image_tag(@sector.illustration, class: "sector_image") %></p>
+
+<ul>
+  <% @sites.each do |site| %>
+    <li><%= site.title %></li>
+    <li><%= site.opening_time %></li>
+    <li><%= site.descritpion %></li>
+    <li><%= site.phone_number %></li>
+    <li><%= site.website %></li>
+    <li><%= site.category %></li>
+    <li><%= site.picture %></li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+

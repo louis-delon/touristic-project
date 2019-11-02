@@ -7,7 +7,7 @@ class Sector < ApplicationRecord
 
   # Associations ===============================================================
 
-  has_many :sites, inverse_of: :sector
+  has_and_belongs_to_many :sites, inverse_of: :sectors, counter_cache: true
   has_one_attached :illustration
 
   # Validations ================================================================
