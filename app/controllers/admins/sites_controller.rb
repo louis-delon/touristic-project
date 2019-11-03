@@ -21,7 +21,6 @@ module Admins
       end
     end
 
-    # A refactorer
     def sort
       params[:site].each_with_index do |id, index|
         Site.where(id: id).update_all(position: index + 1)
@@ -46,7 +45,7 @@ module Admins
 
     def destroy
       if @site.destroy
-        redirect_to admins_sector_path(@sector)
+        redirect_to admins_sector_path(@sector), notice: "Addresse supprimée avec succès"
       else
         set_render_view
         @site.build_address

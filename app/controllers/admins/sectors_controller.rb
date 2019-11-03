@@ -1,5 +1,4 @@
 module Admins
-
   class SectorsController < ApplicationController
 
     before_action :set_sector, only: [:show, :edit, :update, :destroy]
@@ -10,7 +9,6 @@ module Admins
       @sectors = @q.result(distinct: true).order(:position)
     end
 
-    #A refactor dans un controller dedié
     def sort
       params[:sector].each_with_index do |id, index|
         Sector.where(id: id).update_all(position: index + 1)
