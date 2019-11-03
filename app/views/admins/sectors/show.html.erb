@@ -1,30 +1,26 @@
-<h1>Quartier <%= @sector.name %></h1>
-
-<p><%= link_to "retour", admins_root_path %> </p>
-<h2><%= @sector.city %></h2>
-<p><%= @sector.description %></p>
-<p><%= image_tag(@sector.illustration, class: "image") %></p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Quartier <%= @sector.name %></h5>
+    <p class="card-text">@sector.description</p>
+    <p class="card-text"><small class="text-muted"><%= @sector.city %></small></p>
+  </div>
+  <%= image_tag(@sector.illustration, class: " sector-image") %>
+</div>
+<p class="card-text"><%= link_to "retour", admins_root_path %></p>
 
 <h2>Ajouter une Adresse au Quartier</h2>
 
-<%= render "admins/sites/form" %>
+<div class="main-page">
+  <div class="form">
+    <%= render "admins/sites/form" %>
+  </div>
+  <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
+    <% @sites.each do |site| %>
+      <%= render 'admins/sites/cards', sector: @sector, site: site %>
+    <% end %>
+  </ul>
 
-<ul id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
-  <% @sites.each do |site| %>
-    <li class="site-group-item" data-site-id="<%= site.id %>" id="<%= dom_id(site)%>">
-      <div><%= site.title %></div>
-      <div><%= site.opening_time %></div>
-      <div><%= site.description %></div>
-      <div><%= site.phone_number %></div>
-      <div><%= site.website %></div>
-      <div><%= site.category %></div>
-      <div><%= image_tag(site.picture, class: "image") %></div>
-      <div><%= link_to "Voir", admins_sector_site_path(@sector, site) %> </div>
-      <div><%= link_to "Editer", edit_admins_sector_site_path(@sector, site) %> </div>
-      <div><%= link_to "Supprimer", admins_sector_site_path(@sector, site), method: :delete %> </div>
-    </li>
-  <% end %>
-</ul>
+</div>
 
 
 

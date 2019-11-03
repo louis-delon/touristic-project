@@ -1,12 +1,14 @@
 <li class="item" data-sector-id="<%= sector.id %>" id="<%= dom_id(sector)%>">
-  <div>
-    <%= sector.position %>
-    <%= sector.name %>
-    <%= sector.city %>
-  </div>
-  <div>
-    <%= link_to "Supprimer", admins_sector_path(sector), method: :delete, remote: true %>
-    <%= link_to "Voir", admins_sector_path(sector) %>
-    <%= link_to "Editer", edit_admins_sector_path(sector) %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= sector.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= sector.city %></h6>
+      <p class="card-text"><%= sector.description %> </p>
+      <%= link_to "Supprimer", admins_sector_path(sector), method: :delete, remote: true, class: "card-link" %>
+      <%= link_to "Voir", admins_sector_path(sector), class: "card-link" %>
+      <%= link_to "Editer", edit_admins_sector_path(sector), class: "card-link" %>
+    </div>
   </div>
 </li>
+
+
