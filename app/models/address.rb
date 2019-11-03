@@ -7,6 +7,6 @@ class Address < ApplicationRecord
 
   # Validations ================================================================
 
-  validates :street, :postal_code, :city, presence: true
+  validates :street, :postal_code, :city, :sector_id, presence: true
 
 end

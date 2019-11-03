@@ -1,14 +1,17 @@
 <h1>Adresses à visiter Absolument</h1>
 
-<% @sites.each do |site| %>
-  <div><%= site.title %></div>
-  <div><%= site.opening_time %></div>
-  <div><%= site.description %></div>
-  <div><%= site.phone_number %></div>
-  <div><%= site.website %></div>
-  <div><%= site.category %></div>
-  <div><%= image_tag(site.picture, class: "image") %></div>
-  <div><%= link_to "Voir", admins_sector_site_path(site.sectors.first, site) %> </div>
-  <div><%= link_to "Editer", edit_admins_sector_site_path(site.sectors.first, site) %> </div>
-  <div><%= link_to "Supprimer", admins_sector_site_path(site.sectors.first, site), method: :delete %> </div>
+<%= link_to "retour", admins_root_path %>
+
+
+<% @addresses.each do |address| %>
+  <div><%= address.site.title %></div>
+  <div><%= address.site.opening_time %></div>
+  <div><%= address.site.description %></div>
+  <div><%= address.site.phone_number %></div>
+  <div><%= address.site.website %></div>
+  <div><%= address.site.category %></div>
+  <div><%= image_tag(address.site.picture, class: "image") %></div>
+  <div><%= link_to "Voir", admins_sector_site_path(address.sector, address.site) %> </div>
+  <div><%= link_to "Editer", edit_admins_sector_site_path(address.sector, address.site) %> </div>
+  <div><%= link_to "Supprimer", admins_sector_site_path(address.sector, address.site), method: :delete %> </div>
 <% end %>

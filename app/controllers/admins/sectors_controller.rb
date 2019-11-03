@@ -48,7 +48,7 @@ module Admins
     def show
       @sites = @sector.sites
       @site = Site.new
-      @site.build_address
+      @site.addresses.build
     end
 
     def destroy

@@ -6,18 +6,21 @@ module Admins
     before_action :set_site, only: %i(show edit update destroy)
 
     def index
-      @sites = Site.all
+      @addresses = Address.all
     end
 
     def create
+      @sector = Sector.find(params[:sector_id])
+
       @site = Site.new(params_site)
-      @site.sectors = [@sector]
+      @site.addresses.first
+
       if @site.save
         redirect_to admins_sector_url(@sector), notice: "Nouvelle adresse crée avec succès"
       else
         @sites = Site.all
         @site = Site.new
-        @site.build_address
+        @site.addresses.build
         render "admins/sectors/show", status: :unprocessable_entity
       end
     end
@@ -76,10 +79,11 @@ module Admins
         :category,
         :picture,
         :position,
-        address_attributes: [
+        addresses_attributes: [
           :street,
           :city,
-          :postal_code
+          :postal_code,
+          :sector_id
           ]
         )
     end
