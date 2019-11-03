@@ -46,7 +46,7 @@ module Admins
     end
 
     def show
-      @sites = Site.all
+      @sites = @sector.sites
       @site = Site.new
       @site.build_address
     end

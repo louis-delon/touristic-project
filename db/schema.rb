@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
   create_table "sites", force: :cascade do |t|
     t.text "title", null: false
     t.time "opening_time", null: false
-    t.text "description", null: false
     t.string "phone_number"
     t.string "website"
     t.integer "category", null: false
