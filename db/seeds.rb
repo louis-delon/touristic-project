@@ -8,7 +8,6 @@
 
 if Rails.env.development?
   Sector.destroy_all
-  Site.destroy_all
   cities = %i(Rome Berlin Paris)
 
   puts "create sectors"
@@ -25,20 +24,4 @@ if Rails.env.development?
   end
   puts "successfull creating sectors"
 
-
-  # puts "create sites"
-
-  # 10.times do
-  #   s = Site.new(
-  #     title: Faker::Lorem.word,
-  #     opening_time: Time.zone.now,
-  #     description: Faker::Lorem.sentence,
-  #     phone_number: Faker::PhoneNumber.phone_number,
-  #     website: Faker::Internet.url,
-  #     category: rand(1..3),
-  #     active: Faker::Boolean.boolean(true_ratio: 0.8)
-  #   )
-  #   s.save!(validate: false)
-  #   s.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'paris.jpeg')), filename: 'paris.jpeg')
-  # end
 end
