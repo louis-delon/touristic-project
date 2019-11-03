@@ -1,7 +1,11 @@
 <% if errors.any? %>
 <ul>
   <% errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+    <li>
+      <div class="alert alert-danger" role="alert">
+        <%= msg %>
+      </div>
+      </li>
   <% end %>
 </ul>
 <% end %>

@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <%= image_tag(site.picture, class: "image card-img-top") %>
+  <div class="card-body">
+    <h5 class="card-title"><%= site.title %></h5>
+    <p class="card-text"><%= site.description %></p>
+    <%= link_to "Voir", admins_sector_site_path(sector, site), class: "btn btn-primary" %>
+  </div>
+</div>
