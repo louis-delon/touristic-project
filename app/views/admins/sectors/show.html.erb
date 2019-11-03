@@ -9,6 +9,9 @@
 <br>
 
 <h5>Liste des bonnes adresses du quartier</h5>
+<% if @sector.addresses.empty? %>
+  <p>Vous n'avez pas encore ajouté de bonnes addresses à ce quartier</p>
+<% end %>
 
 <div class="main-page">
   <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
