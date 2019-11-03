@@ -6,7 +6,7 @@ class Site < ApplicationRecord
 
   # Associations ===============================================================
 
-  has_many :addresses
+  has_many :addresses, dependent: :delete_all
   has_many :sectors, through: :addresses
   accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
   has_rich_text :description
