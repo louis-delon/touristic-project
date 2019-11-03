@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
     t.string "street"
     t.string "postal_code"
     t.string "city"
-    t.string "latitude"
-    t.string "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "site_id", null: false
     t.bigint "sector_id", null: false
     t.datetime "created_at", precision: 6, null: false

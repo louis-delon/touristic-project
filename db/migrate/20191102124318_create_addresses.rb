@@ -4,8 +4,8 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :street
       t.string :postal_code
       t.string :city
-      t.string :latitude
-      t.string :longitude
+      t.float :latitude
+      t.float :longitude
       t.references :site, null: false, foreign_key: true, index: true
       t.references :sector, null: false, foreign_key: true, index: true
 

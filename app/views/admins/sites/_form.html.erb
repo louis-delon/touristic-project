@@ -36,28 +36,16 @@
   <%= f.fields_for :addresses do |address_field| %>
 
     <div class="form-row">
-        <div class="col-7">
-          <%= address_field.text_field :street, placeholder: "Rue", class: "form-control" %>
-        </div>
-        <div class="col">
-          <%= address_field.text_field :city, placeholder: "Ville", class: "form-control" %>
-        </div>
-        <div class="col">
-          <%= address_field.text_field :postal_code, placeholder: "Code postal", class: "form-control" %>
-        </div>
+      <div class="col-7">
+        <%= address_field.text_field :street, placeholder: "Rue", class: "form-control" %>
       </div>
-
-    <div class="form-group">
-
-    <div >
-    <div class="form-group">
-      <%= address_field.label :postal_code %>
-      <%= address_field.text_field :postal_code,  class: "form-control" %>
-    <div >
-    <div class="form-group">
-      <%= address_field.label :city %>
-      <%= address_field.text_field :city,  class: "form-control" %>
-    <div >
+      <div class="col">
+        <%= address_field.text_field :city, placeholder: "Ville", class: "form-control" %>
+      </div>
+      <div class="col">
+        <%= address_field.text_field :postal_code, placeholder: "Code postal", class: "form-control" %>
+      </div>
+    </div>
 
     <div class="form-group">
       <%= address_field.hidden_field :sector_id, value: @sector.id %>
