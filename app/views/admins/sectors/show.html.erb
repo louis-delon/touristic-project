@@ -1,25 +1,24 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Quartier <%= @sector.name %></h5>
-    <p class="card-text">@sector.description</p>
+    <h4 class="card-title">Quartier <%= @sector.name %></h4>
+    <p class="card-text"><%= @sector.description %></p>
     <p class="card-text"><small class="text-muted"><%= @sector.city %></small></p>
+    <p class="card-text"><%= link_to "retour", admins_root_path %></p>
   </div>
-  <%= image_tag(@sector.illustration, class: " sector-image") %>
 </div>
-<p class="card-text"><%= link_to "retour", admins_root_path %></p>
-
-<h2>Ajouter une Adresse au Quartier</h2>
+<br>
+<h5>Ajouter une Adresse au Quartier</h5>
 
 <div class="main-page">
-  <div class="form">
-    <%= render "admins/sites/form" %>
-  </div>
   <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
     <% @sites.each do |site| %>
       <%= render 'admins/sites/cards', sector: @sector, site: site %>
     <% end %>
   </ul>
 
+  <div class="form">
+    <%= render "admins/sites/form" %>
+  </div>
 </div>
 
 

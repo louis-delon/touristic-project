@@ -11,15 +11,13 @@ module Admins
 
     def create
       @sector = Sector.find(params[:sector_id])
-
       @site = Site.new(params_site)
       @site.addresses.first
 
       if @site.save
         redirect_to admins_sector_url(@sector), notice: "Nouvelle adresse crée avec succès"
       else
-        @sites = Site.all
-        @site = Site.new
+        set_render_view
         @site.addresses.build
         render "admins/sectors/show", status: :unprocessable_entity
       end
@@ -52,8 +50,7 @@ module Admins
       if @site.destroy
         redirect_to admins_sector_path(@sector)
       else
-        @sites = Site.all
-        @site = Site.new
+        set_render_view
         @site.build_address
         render "admins/sectors/show", status: :unprocessable_entity
       end
@@ -67,6 +64,11 @@ module Admins
 
     def set_site
       @site = Site.find(params[:id])
+    end
+
+    def set_render_view
+      @sites = Site.all
+      @site = Site.new
     end
 
     def params_site
