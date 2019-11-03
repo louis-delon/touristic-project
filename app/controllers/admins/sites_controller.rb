@@ -17,7 +17,7 @@ module Admins
       else
         set_render_view
         @site.addresses.build
-        render "admins/sectors/show", status: :unprocessable_entity
+        render "admins/sectors/show"
       end
     end
 
@@ -64,7 +64,7 @@ module Admins
     end
 
     def set_render_view
-      @sites = Site.all
+      @sites = @sector.sites
       @site = Site.new
     end
 
