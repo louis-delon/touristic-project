@@ -3,6 +3,7 @@ class Address < ApplicationRecord
   # Associations ===============================================================
 
   belongs_to :site
+  belongs_to :sector
 
   # Validations ================================================================
 

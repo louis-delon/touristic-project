@@ -1,33 +1,34 @@
-var error_messages = `<%= j render "admins/shared/form_errors_messages", errors: @sector.errors %>`;
-
-function refreshErrorMessages() {
-  var element = document.getElementById('error_messages')
-  element.innerHTML = "";
-}
-
-function addErrorMessages(html) {
-  document.querySelector(".button").blur();
-  var element = document.getElementById('error_messages')
-  element.innerHTML = ""
-  element.insertAdjacentHTML('beforeend', html);
-}
-
-function addSector() {
-  var new_sector = `<%= j render "admins/sectors/sector", sector: @sector%> `;
-  document.getElementById('sectors').insertAdjacentHTML('beforeend', new_sector)
-  document.querySelector(".button").blur();
-}
-
-function refreshForm() {
-  document.getElementById("name").value = "";
-  document.getElementById("city").value = "";
-  document.getElementById("illustration").value = "";
-  document.getElementById("description").value = "";
-}
-
 <% if @sector.errors.any? %>
-  addErrorMessages(error_messages);
+
+  function addErrorMessages(html) {
+    document.querySelector(".button").blur();
+    var element = document.getElementById('error_messages')
+    element.innerHTML = ""
+    element.insertAdjacentHTML('beforeend', html);
+  }
+    var error_messages = `<%= j render "admins/shared/form_errors_messages", errors: @sector.errors %>`;
+    addErrorMessages(error_messages);
+
 <% else %>
+
+  function refreshForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("illustration").value = "";
+    document.getElementById("description").value = "";
+  }
+
+  function addSector() {
+    new_sector = `<%= j render "admins/sectors/sector", sector: @sector %> `;
+    document.getElementById('sectors').insertAdjacentHTML('beforeend', new_sector)
+    document.querySelector(".button").blur();
+  }
+
+  function refreshErrorMessages() {
+    var element = document.getElementById('error_messages')
+    element.innerHTML = "";
+  }
+
   refreshErrorMessages();
   addSector();
   refreshForm();

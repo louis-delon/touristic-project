@@ -6,7 +6,7 @@ class Site < ApplicationRecord
 
   # Associations ===============================================================
 
-  has_and_belongs_to_many :sectors, inverse_of: :sites, counter_cache: true
+  has_many :sectors, through: :addresses, counter_cache: true
   has_one :address, dependent: :destroy
   accepts_nested_attributes_for :address, allow_destroy: true, reject_if: :all_blank
   has_rich_text :description

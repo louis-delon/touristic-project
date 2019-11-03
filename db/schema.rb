@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
     t.string "latitude"
     t.string "longitude"
     t.bigint "site_id", null: false
+    t.bigint "sector_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["sector_id"], name: "index_addresses_on_sector_id"
     t.index ["site_id"], name: "index_addresses_on_site_id"
   end
 
@@ -78,13 +80,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "sectors_sites", id: false, force: :cascade do |t|
-    t.bigint "sector_id", null: false
-    t.bigint "site_id", null: false
-    t.index ["sector_id"], name: "index_sectors_sites_on_sector_id"
-    t.index ["site_id"], name: "index_sectors_sites_on_site_id"
-  end
-
   create_table "sites", force: :cascade do |t|
     t.text "title", null: false
     t.time "opening_time", null: false
@@ -100,5 +95,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_124318) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "sectors"
   add_foreign_key "addresses", "sites"
 end

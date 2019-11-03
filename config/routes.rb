@@ -15,7 +15,11 @@ Rails.application.routes.draw do
           end
         end
       end
-      resources :sites, only: :index
+      resources :sites, only: %i(index show edit update destroy)
+      #   collection do
+      #     patch :sort
+      #   end
+      # end
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
