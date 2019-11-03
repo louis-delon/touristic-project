@@ -1,0 +1,14 @@
+<h1>Adresses à visiter Absolument</h1>
+
+<% @sites.each do |site| %>
+  <div><%= site.title %></div>
+  <div><%= site.opening_time %></div>
+  <div><%= site.description %></div>
+  <div><%= site.phone_number %></div>
+  <div><%= site.website %></div>
+  <div><%= site.category %></div>
+  <div><%= image_tag(site.picture, class: "image") %></div>
+  <div><%= link_to "Voir", admins_sector_site_path(site.sector, site) %> </div>
+  <div><%= link_to "Editer", edit_admins_sector_site_path(site.sector, site) %> </div>
+  <div><%= link_to "Supprimer", admins_sector_site_path(site.sector, site), method: :delete %> </div>
+<% end %>
