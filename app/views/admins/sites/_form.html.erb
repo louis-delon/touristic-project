@@ -28,29 +28,12 @@
     <%= f.text_field :website,  class: "form-control" %>
   <div >
 
-    <div class="col-auto my-1">
-      <%= f.label :category, class: "mr-sm-2 sr-only", for: "inlineFormCustomSelect" %>
-      <%= f.select :category, f.object.class.categories.collect { |k, _| [t("activerecord.attributes.site.category_name.#{k}"), k] }, class: "custom-select mr-sm-2", id: "inlineFormCustomSelect" %>
-    </div>
+  <div class="col-auto my-1">
+    <%= f.label :category, class: "mr-sm-2 sr-only", for: "inlineFormCustomSelect" %>
+    <%= f.select :category, f.object.class.categories.collect { |k, _| [t("activerecord.attributes.site.category_name.#{k}"), k] }, class: "custom-select mr-sm-2", id: "inlineFormCustomSelect" %>
+  </div>
 
-  <%= f.fields_for :addresses do |address_field| %>
-
-    <div class="form-row">
-      <div class="col-7">
-        <%= address_field.text_field :street, placeholder: "Rue", class: "form-control" %>
-      </div>
-      <div class="col">
-        <%= address_field.text_field :city, placeholder: "Ville", class: "form-control" %>
-      </div>
-      <div class="col">
-        <%= address_field.text_field :postal_code, placeholder: "Code postal", class: "form-control" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= address_field.hidden_field :sector_id, value: @sector.id %>
-    <div >
-  <% end %>
+  <%= render 'admins/sites/address_form', f:f %>
 
   <div  class="form-group">
     <%= f.label :picture %>
