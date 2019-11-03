@@ -12,8 +12,6 @@ module Admins
     def create
       @sector = Sector.find(params[:sector_id])
       @site = Site.new(params_site)
-      @site.addresses.first
-
       if @site.save
         redirect_to admins_sector_url(@sector), notice: "Nouvelle adresse crée avec succès"
       else

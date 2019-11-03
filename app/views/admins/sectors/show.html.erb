@@ -7,7 +7,8 @@
   </div>
 </div>
 <br>
-<h5>Ajouter une Adresse au Quartier</h5>
+
+<h5>Liste des bonnes adresses du quartier</h5>
 
 <div class="main-page">
   <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
@@ -16,6 +17,9 @@
     <% end %>
   </ul>
 
+<br><br>
+
+<h5>Ajouter une Adresse au Quartier</h5>
   <div class="form">
     <%= render "admins/sites/form" %>
   </div>
