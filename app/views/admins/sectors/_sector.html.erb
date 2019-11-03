@@ -1,11 +1,12 @@
-<tr data-sector-id="<%= sector.id %>" id="<%= dom_id(sector)%>">
-  <td><%= sector.position %></td>
-  <td><%= sector.name %></td>
-  <td><%= sector.city %></td>
-  <td>
+<li class="item" data-sector-id="<%= sector.id %>" id="<%= dom_id(sector)%>">
+  <div>
+    <%= sector.position %>
+    <%= sector.name %>
+    <%= sector.city %>
+  </div>
+  <div>
     <%= link_to "Supprimer", admins_sector_path(sector), method: :delete, remote: true %>
     <%= link_to "Voir", admins_sector_path(sector) %>
     <%= link_to "Editer", edit_admins_sector_path(sector) %>
-  </td>
-</tr>
-
+  </div>
+</li>

@@ -21,21 +21,10 @@
   </div>
 
   <div>
-    <table id="sector_list" class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Position</th>
-          <th scope="col">Nom</th>
-          <th scope="col">Ville</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-
-      <tbody id="sectors" data-url="<%= sort_admins_sectors_path %>" >
+    <ul id="sectors" data-url="<%= sort_admins_sectors_path %>" >
         <% @sectors.each do |sector| %>
-            <%= render "sector", sector: sector %>
+          <%= render "sector", sector: sector %>
         <% end %>
-      </tbody>
-    </table>
+    </ul>
   </div>
 </div>

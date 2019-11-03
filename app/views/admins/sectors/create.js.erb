@@ -13,19 +13,7 @@ function addErrorMessages(html) {
 }
 
 function addSector() {
-  var new_sector =
-    `<tr data-sector-id="<%= @sector.id %>" id="<%= dom_id(@sector)%>">
-      <td><%= @sector.position %></td>
-      <td><%= @sector.name %></td>
-      <td><%= @sector.city %></td>
-      <% if @sector.persisted? %>
-        <td>
-          <%= link_to "Supprimer", admins_sector_path(@sector), method: :delete, remote: true %>
-          <%= link_to "Voir", admins_sector_path(@sector) %>
-          <%= link_to "Editer", edit_admins_sector_path(@sector) %>
-        </td>
-      <% end %>
-    </tr>`;
+  var new_sector = `<%= j render "admins/sectors/sector", sector: @sector%> `;
   document.getElementById('sectors').insertAdjacentHTML('beforeend', new_sector)
   document.querySelector(".button").blur();
 }
