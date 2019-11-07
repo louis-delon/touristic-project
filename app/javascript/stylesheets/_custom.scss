@@ -1,14 +1,20 @@
-#item li {
+li {
   cursor: pointer;
 }
 
-ul {
+ul, li {
   list-style-type: none;
+  padding: 0px !important;
+}
+
+label {
+  margin-bottom: 0.5rem !important;
 }
 
 .image {
   width: 286px;
   max-height: 180px;
+  object-fit: cover;
 }
 
 .home-image {
@@ -18,8 +24,23 @@ ul {
 
 .card-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px
+}
+
+.sectors-index {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.navlinks {
+  display: flex;
+}
+
+
+.site-form, .sector-form {
+  max-width: 400px;
 }
 
 .search-form-button {
@@ -27,7 +48,18 @@ ul {
   margin-left: 15px;
 }
 
-.search-form {
-  margin-left: 40px;
+#trix-toolbar-1, #trix-toolbar-1 {
+  overflow-y: auto;
+  max-height: 150px;
 }
-// display: inline-block
+
+#sector_search {
+  display: flex;
+
+  flex-flow: nowrap;
+  margin-bottom: 20px;
+}
+
+#sector_search div {
+ margin-right: 10px;
+}

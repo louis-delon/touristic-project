@@ -3,7 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav navlinks">
       <%= link_to "Accueil", admins_root_path, class: "nav-item nav-link active" %>
       <% if current_admin %>
         <%= link_to "Se déconnecter", destroy_admin_session_path, class: "nav-item nav-link", method: :delete %>
