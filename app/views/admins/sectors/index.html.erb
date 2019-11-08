@@ -1,22 +1,21 @@
-<div class="card mb-3">
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <div class="card-body">
     <h3 class="card-title">Bienvenue dans vos espace d'administration</h3>
     <p class="card-text">Depuis votre interface vous pouvez ajouter des quartiers ainsi que les bonnes addresses associées</p>
-    <p class="card-text"><small class="text-muted">Dernière mise à jour: <%= Time.zone.now - 5.minutes %> </small></p>
+    <p class="card-text"><small class="text-muted">Dernière mise à jour: <%= l(Time.zone.now - 5.minutes, format: :short) %> </small></p>
+    <p><%= link_to "Lister toutes les adresses", admins_sites_path %> </p>
   </div>
 </div>
 
-<p><%= link_to "Lister toutes les adresses", admins_sites_path %> </p>
-
-<div class="sectors-index">
-  <div id="sector">
+<div class="card-form">
+  <div id="sector" class="shadow-lg p-3 mb-5 bg-white rounded">
     <h4>Ajouter un quartier</h4>
     <%= form_with model: [:admins, @sector], data: { controller: "sectors" }, class: "sector-form"  do |f| %>
       <%= render 'form_attributes', f:f %>
     <% end %>
     <br><br>
   </div>
-  <div class="search-form">
+  <div class="search-form shadow-lg p-3 mb-5 bg-white rounded" >
     <h4>Liste des différents quartiers</h4>
     <%= render 'search_form' %>
 

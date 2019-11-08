@@ -17,6 +17,10 @@ label {
   object-fit: cover;
 }
 
+.card {
+  margin-bottom: 50px;
+}
+
 .home-image {
   max-width:100%;
   height:auto;
@@ -28,7 +32,7 @@ label {
   grid-gap: 16px
 }
 
-.sectors-index {
+.card-form {
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -48,7 +52,7 @@ label {
   margin-left: 15px;
 }
 
-#trix-toolbar-1, #trix-toolbar-1 {
+trix-toolbar {
   overflow-y: auto;
   max-height: 150px;
 }

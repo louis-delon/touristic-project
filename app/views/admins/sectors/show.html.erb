@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card shadow-lg p-3 mb-5 bg-white rounded">
   <div class="card-body">
     <h4 class="card-title">Quartier <%= @sector.name %></h4>
     <p class="card-text"><%= @sector.description %></p>
@@ -6,26 +6,25 @@
     <p class="card-text"><%= link_to "retour", admins_root_path %></p>
   </div>
 </div>
-<br>
 
-<h5>Liste des bonnes adresses du quartier</h5>
-<% if @sector.addresses.empty? %>
-  <p>Vous n'avez pas encore ajouté de bonnes addresses à ce quartier</p>
-<% end %>
-
-<div class="main-page">
-  <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
-    <% @sites.each do |site| %>
-      <%= render 'admins/sites/cards', sector: @sector, site: site %>
-    <% end %>
-  </ul>
-
-<br><br>
-
-<h5>Ajouter une Adresse au Quartier</h5>
-  <div class="form">
+<div class="card-form shadow-sm shadow-lg p-3 mb-5 bg-white rounded">
+  <div class="site-form">
+    <h5>Ajouter une Adresse au Quartier</h5>
     <%= render "admins/sites/form" %>
   </div>
+
+  <div>
+    <h5>Liste des bonnes adresses du quartier</h5>
+    <% if @sector.addresses.empty? %>
+      <p>Vous n'avez pas encore ajouté de bonnes addresses à ce quartier</p>
+    <% end %>
+    <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
+      <% @sites.each do |site| %>
+        <%= render 'admins/sites/cards', sector: @sector, site: site %>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
 
 

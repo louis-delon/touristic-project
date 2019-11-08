@@ -6,27 +6,27 @@
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title,  class: "form-control" %>
-  <div >
+  </div>
 
   <div class="form-group">
     <%= f.label :opening_time %>
     <%= f.time_field :opening_time,  class: "form-control" %>
-  <div >
+  </div>
 
   <div class="form-group">
     <%= f.label :description %>
     <%= f.rich_text_area :description,  class: "form-control" %>
-  <div >
+  </div>
 
   <div class="form-group">
     <%= f.label :phone_number %>
     <%= f.text_field :phone_number,  class: "form-control" %>
-  <div >
+  </div>
 
   <div class="form-group">
     <%= f.label :website %>
     <%= f.text_field :website,  class: "form-control" %>
-  <div >
+  </div>
 
   <div class="col-auto my-1">
     <%= f.label :category, class: "mr-sm-2 sr-only", for: "inlineFormCustomSelect" %>
@@ -35,11 +35,13 @@
 
   <%= render 'admins/sites/address_form', f:f %>
 
-  <div  class="form-group">
+  <div class="form-group">
     <%= f.label :picture %>
     <%= f.file_field :picture  %>
   </div>
 
-   <%= f.button "Enregistrer",  class: "button btn btn-primary" %>
+  <div>
+    <%= f.button "Enregistrer",  class: "button btn btn-primary" %>
+  </div>
 
- <% end %>
+<% end %>
