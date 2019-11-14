@@ -5,7 +5,7 @@ class Sector < ApplicationRecord
   acts_as_list
 
   # Associations ===============================================================
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
   has_many :sites, through: :addresses
   has_rich_text :description
   has_one_attached :illustration

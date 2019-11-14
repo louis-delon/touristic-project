@@ -12,16 +12,16 @@ module Admins
 
     private
 
+    def key_params
+      request.parameters.keys[0]
+    end
+
     def klass
       key_params.camelize.constantize
     end
 
     def object
       key_params.to_sym
-    end
-
-    def key_params
-      request.parameters.keys[0]
     end
 
   end

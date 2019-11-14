@@ -1,0 +1,10 @@
+<li class="item" data-site-id="<%= address.id %>" id="<%= dom_id(address)%>">
+  <div class="card" style="width: 18rem;">
+    <%= image_tag(address.site.picture, class: "image card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= address.site.title %></h5>
+      <p class="card-text"><%= address.site.description %></p>
+      <%= link_to "Voir", admins_sector_site_path(address.sector, address.site), class: "btn btn-primary" %>
+    </div>
+  </div>
+</li>
