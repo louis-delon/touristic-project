@@ -9,14 +9,6 @@ module Admins
       @sectors = @q.result(distinct: true).order(:position)
     end
 
-    def sort
-      params[:sector].each_with_index do |id, index|
-        Sector.where(id: id).update_all(position: index + 1)
-      end
-
-      head :ok
-    end
-
     def create
       @sector = Sector.new(params_sector)
       if @sector.save

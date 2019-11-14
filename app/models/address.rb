@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
 
   # Config =====================================================================
-
+  acts_as_list
   geocoded_by :address
 
   # Callbacks ==================================================================

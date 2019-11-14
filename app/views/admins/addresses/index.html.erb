@@ -1,0 +1,19 @@
+<h1>Adresses à visiter Absolument</h1>
+
+<%= link_to "retour", admins_root_path %>
+
+<div class= "card-list" id="addresses" data-url="<%= sort_admins_addresses_path %>">
+  <% @addresses.each do |address| %>
+    <li class="item" data-site-id="<%= address.id %>" id="<%= dom_id(address)%>">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag(address.site.picture, class: "image card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title"><%= address.site.title %></h5>
+          <p class="card-text"><%= address.site.description %></p>
+          <%= link_to "Voir", admins_sector_site_path(address.sector, address.site), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</div>
+

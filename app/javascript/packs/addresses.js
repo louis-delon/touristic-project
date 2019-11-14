@@ -1,6 +1,5 @@
 document.addEventListener("turbolinks:load", function() {
-
-  $("#sectors").sortable({
+  $("#addresses").sortable({
     update: function(e, ui) {
       Rails.ajax({
         url: $(this).data("url"),
