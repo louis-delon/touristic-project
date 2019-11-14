@@ -13,9 +13,7 @@ require("jquery")
 require('webpack-jquery-ui');
 require('webpack-jquery-ui/css');
 require("webpack-jquery-ui/sortable")
-require("packs/sectors")
-require("packs/sites")
-require("packs/addresses")
+require("packs/sort_list")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

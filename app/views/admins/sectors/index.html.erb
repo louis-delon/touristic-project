@@ -19,7 +19,7 @@
     <h4>Liste des différents quartiers</h4>
     <%= render 'search_form' %>
 
-    <ul id="sectors" data-url="<%= sort_admins_sectors_path %>" class="card-list">
+    <ul class="sortable card-list" data-url="<%= sort_admins_sectors_path %>" >
       <% @sectors.each do |sector| %>
         <%= render "sector", sector: sector %>
       <% end %>

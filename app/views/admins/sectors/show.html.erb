@@ -18,7 +18,7 @@
     <% if @sector.addresses.empty? %>
       <p>Vous n'avez pas encore ajouté de bonnes addresses à ce quartier</p>
     <% end %>
-    <ul class="card-list" id="sites"  class="row site-group" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
+    <ul class="card-list sortable" data-url="<%= sort_admins_sector_sites_path(@sector) %>">
       <% @sites.each do |site| %>
         <%= render 'admins/sites/cards', sector: @sector, site: site %>
       <% end %>

@@ -2,7 +2,7 @@
 
 <%= link_to "retour", admins_root_path %>
 
-<div class= "card-list" id="addresses" data-url="<%= sort_admins_addresses_path %>">
+<div class= "card-list sortable" data-url="<%= sort_admins_addresses_path %>">
   <% @addresses.each do |address| %>
     <%= render 'card', address: address %>
   <% end %>
