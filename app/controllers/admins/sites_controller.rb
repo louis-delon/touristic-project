@@ -5,10 +5,6 @@ module Admins
     before_action :set_sector, only: %i(create show edit update destroy)
     before_action :set_site, only: %i(show edit update destroy)
 
-    def index
-      @addresses = Address.all
-    end
-
     def create
       @sector = Sector.find(params[:sector_id])
       @site = Site.new(params_site)
@@ -19,14 +15,6 @@ module Admins
         @site.addresses.build
         render "admins/sectors/show"
       end
-    end
-
-    def sort
-      params[:site].each_with_index do |id, index|
-        Site.where(id: id).update_all(position: index + 1)
-      end
-
-      head :ok
     end
 
     def show

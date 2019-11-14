@@ -1,7 +1,11 @@
 module Admins
   class AddressesController < ApplicationController
-    def create
 
+    def index
+      @addresses = Address.all
+    end
+
+    def create
     end
   end
 end
